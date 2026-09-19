@@ -1,0 +1,15 @@
+{
+  "name": "mental-health-resource-locator",
+  "version": "1.0.0",
+  "description": "Find free and low-cost mental health resources near you, using SAMHSA's public treatment locator.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
