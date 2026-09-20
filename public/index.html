@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Find Free Mental Health Help Near You</title>
+<meta name="description" content="Search SAMHSA's national directory for free and low-cost mental health providers near you, plus hotlines you can reach right now." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,440;9..144,560;9..144,650&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#zip-form">Skip to search</a>
+
+  <div class="crisis-strip">
+    <p>In crisis right now? <a href="tel:988"><strong>Call or text 988</strong></a> — free, confidential, 24/7.</p>
+  </div>
+
+  <nav class="site-nav" aria-label="Main">
+    <div class="wrap nav-inner">
+      <a class="nav-brand" href="index.html">🌿 Mental Health Locator</a>
+      <div class="nav-links">
+        <a href="index.html" aria-current="page">Find Help</a>
+        <a href="founders.html">Our Founders</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">Built on SAMHSA's public treatment directory</p>
+      <h1>Find mental health support you can actually afford</h1>
+      <p class="lede">Enter a zip code to search free and sliding-scale providers near that area, plus national hotlines you can reach right now, no appointment needed.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="search-panel" aria-labelledby="search-heading">
+      <h2 id="search-heading" class="visually-hidden">Search by zip code</h2>
+      <form id="zip-form">
+        <div class="field">
+          <label for="zip">Zip code</label>
+          <input type="text" id="zip" name="zip" inputmode="numeric" pattern="\d{5}" maxlength="5" placeholder="e.g. 98133" required autocomplete="postal-code" />
+        </div>
+        <div class="field">
+          <label for="radius">Search radius</label>
+          <select id="radius" name="radius">
+            <option value="10">10 miles</option>
+            <option value="25" selected>25 miles</option>
+            <option value="50">50 miles</option>
+            <option value="100">100 miles</option>
+          </select>
+        </div>
+        <div class="field checkbox-field">
+          <input type="checkbox" id="freeOnly" name="freeOnly" />
+          <label for="freeOnly">Only show free / sliding-scale options</label>
+        </div>
+        <button type="submit" id="search-btn">Search</button>
+      </form>
+      <p id="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="crisis-section" aria-labelledby="crisis-heading">
+      <h2 id="crisis-heading">Free national hotlines, available now</h2>
+      <ul id="crisis-list" class="crisis-list"></ul>
+    </section>
+
+    <section class="results-section" hidden id="results-section" aria-labelledby="results-heading">
+      <div class="results-header">
+        <h2 id="results-heading">Providers near <span id="result-location"></span></h2>
+        <p id="result-count" class="muted"></p>
+      </div>
+      <div class="results-layout">
+        <ol id="results-list" class="results-list"></ol>
+        <div id="map" class="map"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Provider data comes from <a href="https://findtreatment.gov" target="_blank" rel="noopener">SAMHSA's FindTreatment.gov</a>, a free federal service updated on a rolling basis. Always call ahead to confirm cost, availability, and insurance before visiting.</p>
+      <p><strong>This tool is not a crisis service.</strong> If you or someone you know is in immediate danger, call 911 or go to your nearest emergency room.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
